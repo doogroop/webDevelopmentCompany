@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom';
+import Navigation from './Components/Navigation'
+import Intro from './Components/Intro';
+import Contact from './Components/Contact';
+import About from './Components/About';
 import './App.css';
-
+import {useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function App() {
+
+  useEffect(()=>{
+    document.title = 'Web Development Company';
+    AOS.init({
+      once: false,
+    });
+  }, []);
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>
+        <Navigation/>
+        </header>
+        <body>
+          <Intro/>
+          <Contact/>
+          <About/>
+
+        </body>
+    
     </div>
+    </BrowserRouter>
   );
 }
-
 export default App;
