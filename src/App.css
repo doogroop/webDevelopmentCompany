@@ -2,8 +2,8 @@
   text-align: center;
 }
 body {
-  background-color: #000; /* Black */
-  color: #fff; /* White */
+  background-color: #fff; /* Black */
+  color: #000; /* White */
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -363,3 +363,75 @@ body {
 .resumeLink:hover span:after {
   bottom: 0;
 }
+
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  overflow: hidden; /* Hide overflowing items */
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for moving */
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Prevents items from shrinking or growing */
+  width: 250px; /* Card width */
+  height: 300px; /* Card height */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 5px; /* Controls the spacing between cards */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.carousel-item.active,
+.carousel-item:hover {
+  transform: scale(1.2); /* Enlarges the active or hovered item */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item:not(.active) {
+  opacity: 0.9; /* Makes non-active items slightly less prominent */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+

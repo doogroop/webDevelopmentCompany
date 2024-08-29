@@ -3,6 +3,8 @@ import Navigation from './Components/Navigation'
 import Intro from './Components/Intro';
 import Contact from './Components/Contact';
 import About from './Components/About';
+import Price from './Components/Prices'
+import ContactPage from './Components/ContactPage';
 import './App.css';
 import {useEffect} from 'react';
 import AOS from 'aos';
@@ -21,12 +23,29 @@ function App() {
       <header>
         <Navigation/>
         </header>
-        <body>
+        <br></br>
+        <main>
           <Intro/>
-          <Contact/>
-          <About/>
+        </main>
+        <br></br>
+        <main>
+          <Price/>
+        </main>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
 
-        </body>
+        <main>
+          <Contact/>
+        </main>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        <main>
+          <About/>
+        </main>
     
     </div>
     </BrowserRouter>
