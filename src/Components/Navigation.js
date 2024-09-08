@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Button, Offcanvas, Container } from 'react-bootstrap';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './web-development-company-high-resolution-logo-black-transparent.png';
+import logo from './web-development-company-high-resolution-logo-white-transparent.png';
 import './ContactPage';
 import './Contact';
 const Navigation = () => {
@@ -21,8 +23,8 @@ const Navigation = () => {
 
     return (
         <>
-            <Navbar expand="lg" style={{ backgroundColor: 'white' }} className="justify-content-center">
-                <Container className="justify-content-center">
+            <Navbar expand="lg" style={{ backgroundColor: 'black' }} className="justify-content-left">
+                <Container className="justify-content-left">
                     <Navbar.Brand href="#home">
                         <img
                             src={logo}
@@ -39,12 +41,12 @@ const Navigation = () => {
                     ) : (
                         <Navbar.Collapse className="justify-content-center">
                             <Nav className="ml-auto">
-                                <Nav.Link href="/" style={{ color: 'black' }}>Home</Nav.Link>
-                                <Nav.Link href="#about" style={{ color: 'black' }}>About Us</Nav.Link>
-                                <Nav.Link href="#portfolio" style={{ color: 'black' }}>Packages</Nav.Link>
-                                <Nav.Link href="#backdrops" style={{ color: 'black' }}>Backdrops</Nav.Link>
-                                <Nav.Link href='#contact' style={{ color: 'black' }}>Contact</Nav.Link>
-                                <Button variant="outline-dark" className="ml-2">Get a Quote</Button>
+                                <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
+                                <Nav.Link href="#about" style={{ color: 'white' , whiteSpace: 'nowrap', marginRight: '15px'}}>About Us</Nav.Link>
+                                <Nav.Link href="#portfolio" style={{ color: 'white' }}>Packages</Nav.Link>
+                                <Nav.Link href="#backdrops" style={{ color: 'white' }}>Backdrops</Nav.Link>
+                                <Nav.Link href='#contact' style={{ color: 'white' }}>Contact</Nav.Link>
+                                <Button variant="outline-light" className="ml-2">Get a Quote</Button>
                             </Nav>
                         </Navbar.Collapse>
                     )}
@@ -52,18 +54,18 @@ const Navigation = () => {
             </Navbar>
 
             {isMobile && (
-                <Offcanvas show={show} onHide={handleClose}>
+                <Offcanvas show={show} onHide={handleClose} style={{ backgroundColor: 'black' }} >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title>Menu</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="flex-column">
-                            <Nav.Link href="#home" onClick={handleClose} style={{ color: 'black' }}>Home</Nav.Link>
-                            <Nav.Link href="#about" onClick={handleClose} style={{ color: 'black' }}>About Us</Nav.Link>
-                            <Nav.Link href="#prices" onClick={handleClose} style={{ color: 'black' }}>Packages</Nav.Link>
-                            <Nav.Link href="#backdrops" onClick={handleClose} style={{ color: 'black' }}>Backdrops</Nav.Link>
-                            <Nav.Link href="#contact" onClick={handleClose} style={{ color: 'black' }}>Contact</Nav.Link>
-                            <Button variant="outline-dark" className="mt-2" onClick={handleClose}>Get a Quote</Button>
+                            <Nav.Link href="#home" onClick={handleClose} style={{ color: 'white' }}>Home</Nav.Link>
+                            <Nav.Link href="#about" onClick={handleClose} style={{ color: 'white' }}>About Us</Nav.Link>
+                            <Nav.Link href="#prices" onClick={handleClose} style={{ color: 'white' }}>Packages</Nav.Link>
+                            <Nav.Link href="#backdrops" onClick={handleClose} style={{ color: 'white' }}>Backdrops</Nav.Link>
+                            <Nav.Link href="#contact" onClick={handleClose} style={{ color: 'white' }}>Contact</Nav.Link>
+                            <Button variant="outline-light" className="mt-2" onClick={handleClose}>Get a Quote</Button>
                         </Nav>
                     </Offcanvas.Body>
                 </Offcanvas>
