@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Button, Offcanvas, Container } from 'react-bootstrap';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './web-development-company-high-resolution-logo-white-transparent.png';
-import './ContactPage';
-import './Contact';
+
 const Navigation = () => {
     const [show, setShow] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 991);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 991);
-
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <>
@@ -42,10 +44,10 @@ const Navigation = () => {
                         <Navbar.Collapse className="justify-content-center">
                             <Nav className="ml-auto">
                                 <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
-                                <Nav.Link href="#about" style={{ color: 'white' , whiteSpace: 'nowrap', marginRight: '15px'}}>About Us</Nav.Link>
-                                <Nav.Link href="#portfolio" style={{ color: 'white' }}>Packages</Nav.Link>
-                                <Nav.Link href="#backdrops" style={{ color: 'white' }}>Backdrops</Nav.Link>
-                                <Nav.Link href='#contact' style={{ color: 'white' }}>Contact</Nav.Link>
+                                <Nav.Link onClick={() => scrollToSection('about')} style={{ color: 'white', whiteSpace: 'nowrap', marginRight: '5px' }}>About Us</Nav.Link>
+                                <Nav.Link onClick={() => scrollToSection('portfolio')} style={{ color: 'white' }}>Packages</Nav.Link>
+                                <Nav.Link onClick={() => scrollToSection('backdrops')} style={{ color: 'white' }}>Backdrops</Nav.Link>
+                                <Nav.Link onClick={() => scrollToSection('contact')} style={{ color: 'white' }}>Contact</Nav.Link>
                                 <Button variant="outline-light" className="ml-2">Get a Quote</Button>
                             </Nav>
                         </Navbar.Collapse>
@@ -60,11 +62,11 @@ const Navigation = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="flex-column">
-                            <Nav.Link href="#home" onClick={handleClose} style={{ color: 'white' }}>Home</Nav.Link>
-                            <Nav.Link href="#about" onClick={handleClose} style={{ color: 'white' }}>About Us</Nav.Link>
-                            <Nav.Link href="#prices" onClick={handleClose} style={{ color: 'white' }}>Packages</Nav.Link>
-                            <Nav.Link href="#backdrops" onClick={handleClose} style={{ color: 'white' }}>Backdrops</Nav.Link>
-                            <Nav.Link href="#contact" onClick={handleClose} style={{ color: 'white' }}>Contact</Nav.Link>
+                            <Nav.Link href="/" onClick={handleClose} style={{ color: 'white' }}>Home</Nav.Link>
+                            <Nav.Link onClick={() => { handleClose(); scrollToSection('about'); }} style={{ color: 'white' }}>About Us</Nav.Link>
+                            <Nav.Link onClick={() => { handleClose(); scrollToSection('portfolio'); }} style={{ color: 'white' }}>Packages</Nav.Link>
+                            <Nav.Link onClick={() => { handleClose(); scrollToSection('backdrops'); }} style={{ color: 'white' }}>Backdrops</Nav.Link>
+                            <Nav.Link onClick={() => { handleClose(); scrollToSection('contact'); }} style={{ color: 'white' }}>Contact</Nav.Link>
                             <Button variant="outline-light" className="mt-2" onClick={handleClose}>Get a Quote</Button>
                         </Nav>
                     </Offcanvas.Body>

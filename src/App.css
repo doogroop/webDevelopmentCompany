@@ -69,26 +69,21 @@ body {
     transform: rotate(360deg);
   }
 }
-
-.about {
-  padding: 50px;
-  p {
-    text-align: justify;
-  }
-}
-
-.about h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
+/**
 .intro{
   padding: 50px;
   font-size: 5em;
+  text-align: center;
+}
+  */
+.intro {
+  padding: 50px;
+  font-size: 5em; /* Responsive font size for h1 */
+  text-align: center;
+}
+
+.intro p {
+  font-size: 3vw; /* Responsive font size for p */
   text-align: center;
 }
 .portfolio {
@@ -289,80 +284,6 @@ body {
 .view-btn:hover span:after {
   bottom: 0;
 }
-.resume-container {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
-.resumeLink {
-  font-family: Manrope, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-  overflow: hidden;
-}
-
-.resumeLink:before, .resumeLink:after {
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 50%;
-  background: #61dafb;
-  transition: all 0.3s;
-}
-
-.resumeLink:before {
-  top: 0;
-  left: 50%;
-}
-
-.resumeLink:after {
-  bottom: 0;
-  right: 50%;
-}
-
-.resumeLink:hover:before {
-  left: 0;
-}
-
-.resumeLink:hover:after {
-  right: 0;
-}
-
-.resumeLink span:before, .resumeLink span:after {
-  position: absolute;
-  content: "";
-  height: 50%;
-  width: 2px;
-  background: #61dafb;
-  transition: all 0.3s;
-}
-
-.resumeLink span:before {
-  top: 50%;
-  left: 0;
-}
-
-.resumeLink span:after {
-  bottom: 50%;
-  right: 0;
-}
-
-.resumeLink:hover span:before {
-  top: 0;
-}
-
-.resumeLink:hover span:after {
-  bottom: 0;
-}
 
 .carousel-container {
   width: 80%;
@@ -483,11 +404,19 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding-top: 15%;
-  padding-bottom: 15%;
+  padding-top: 0;
+  padding-bottom: 0;
   padding: 0;
   box-sizing: border-box;
   z-index: 4;
+}
+.card3 p{
+  font-size: 2vw; /* Responsive font size for p */
+  text-align: center;
+}
+.card4 p{
+  font-size: 2vw; /* Responsive font size for p */
+  text-align: center;
 }
 .card4 {
   width: 100%;
@@ -498,8 +427,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 10px;
-  padding-bottom: 50px;
+  padding: 0;
+  padding-top: 0;
+  padding-bottom: 15%;
   box-sizing: border-box;
   z-index: 5;
 }
@@ -563,8 +493,21 @@ padding-top: 15%;
   color: red;
   font-size: 14px;
 }
+button{
+  width: 30%;
+  padding: 10px;
+  background-color: #4a80dc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #7087e3;
+}
 
-button {
+.forumButton {
   width: 100%;
   padding: 10px;
   background-color: #28a745;
@@ -575,7 +518,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.forumButton:hover {
   background-color: #218838;
 }
 

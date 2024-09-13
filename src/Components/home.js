@@ -53,11 +53,6 @@ function Home() {
             <div className="card4" ref={el => cardRefs.current[3] = el} data-aos="fade-up">
                 <About />
             </div>
-            <div className="navbar">
-                {cardRefs.current.map((_, index) => (
-                    <button key={index} onClick={() => scrollToCard(index)}>Card {index + 1}</button>
-                ))}
-            </div>
         </div>
     );
 }

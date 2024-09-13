@@ -5,7 +5,7 @@ function Intro() {
   return (
     <div id="intro" className='intro'>
       <h1 data-aos="fade-up">Company Name</h1>
-      <p data-aos="fade-up">WELCOME!</p>
+      <p data-aos="fade-up">We create Websites for start ups and established businesses in North America.</p>
     </div>
   );
 }

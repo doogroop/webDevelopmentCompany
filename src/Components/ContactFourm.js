@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import "../App.css"; // Add styles here or in your CSS file
 
 function ContactForm() {
@@ -49,10 +50,14 @@ function ContactForm() {
     e.preventDefault();
 
     if (validate()) {
-      // Do something with form data (e.g., send it to a server)
-      console.log('Form Data:', formData);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+      emailjs.sendForm('service_uq5q8c2', 'template_ac98npf', e.target, '9B4inKB9u81yuCPif')
+        .then((result) => {
+          console.log(result.text);
+          setSubmitted(true);
+          setFormData({ name: '', email: '', message: '' });
+        }, (error) => {
+          console.log(error.text);
+        });
     }
   };
 
@@ -100,7 +105,7 @@ function ContactForm() {
           {errors.message && <p className="error-text">{errors.message}</p>}
         </div>
 
-        <button type="submit">Submit</button>
+        <button className='forumButton'type="submit">Submit</button>
       </form>
     </div>
   );
